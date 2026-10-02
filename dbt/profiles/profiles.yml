@@ -1,0 +1,13 @@
+superstore_dbt:
+  outputs:
+    dev:
+      type: duckdb
+      path: /app/duckdb/superstore.duckdb
+      threads: 1
+
+    prod:
+      type: duckdb
+      path: /app/duckdb/superstore.duckdb
+      threads: 4
+
+  target: dev

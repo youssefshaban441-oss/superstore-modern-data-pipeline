@@ -1,0 +1,40 @@
+services:
+  pipeline:
+    build: .
+    container_name: superstore_pipeline
+
+    working_dir: /app
+
+    volumes:
+      - .:/app
+
+    environment:
+      DBT_PROFILES_DIR: /app/dbt/profiles
+
+    stdin_open: true
+    tty: true
+
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+
+    container_name: superstore_airflow
+
+    working_dir: /app
+
+    volumes:
+      - .:/app
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: "True"
+      DBT_PROFILES_DIR: /app/dbt/profiles
+
+    ports:
+      - "8080:8080"
+
+    command: standalone

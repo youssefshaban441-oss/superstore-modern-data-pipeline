@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+venv/
+.venv/
+
+# DuckDB database files
+*.duckdb
+*.duckdb.wal
+
+# dbt generated files
+dbt/superstore_dbt/target/
+dbt/superstore_dbt/logs/
+dbt/superstore_dbt/dbt_packages/
+
+# Airflow generated files
+airflow/logs/
+airflow/plugins/__pycache__/
+airflow/dags/__pycache__/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
+
+# Local source copy
+data/Superstore.xlsx
+
+# Local dbt user settings
+dbt/profiles/.user.yml

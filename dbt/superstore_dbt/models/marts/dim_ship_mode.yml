@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_ship_mode
+    columns:
+      - name: ship_mode_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: ship_mode
+        data_tests:
+          - not_null
+          - unique

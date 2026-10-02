@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_segment
+    columns:
+      - name: segment_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: segment
+        data_tests:
+          - not_null
+          - unique
