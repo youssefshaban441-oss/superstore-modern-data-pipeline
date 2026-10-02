@@ -239,6 +239,12 @@ The successful end-to-end pipeline run completed with all tests passing.
 
 ## Airflow Orchestration
 
+### Successful Pipeline Run
+
+The following Airflow DAG run completed successfully end-to-end:
+
+![Airflow Pipeline Success](docs/images/airflow_success.png)
+
 Apache Airflow orchestrates the complete pipeline.
 
 DAG:
